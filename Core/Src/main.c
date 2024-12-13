@@ -44,6 +44,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+// Blink interval variable
 unsigned int blink_interval_ms = 500;
 
 /* USER CODE END PV */
@@ -97,6 +98,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    /* Check if button is pressed and change blink_interval_ms dependent on it. */
     if ( HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) == GPIO_PIN_RESET )
     {
       blink_interval_ms = 500;
@@ -106,6 +108,7 @@ int main(void)
       blink_interval_ms = 250;
     }
 
+    /* Toggle led to see output on nucleo */
     HAL_GPIO_TogglePin( LD2_GPIO_Port, LD2_Pin);
     HAL_Delay( blink_interval_ms );
     /* USER CODE END WHILE */
