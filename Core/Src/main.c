@@ -101,11 +101,11 @@ int main(void)
     /* Check if button is pressed and change blink_interval_ms dependent on it. */
     if ( HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) == GPIO_PIN_RESET )
     {
-      blink_interval_ms = 500;
+      blink_interval_ms = 750;
     }
     else
     {
-      blink_interval_ms = 250;
+      blink_interval_ms = 500;
     }
 
     /* Toggle led to see output on nucleo */
